@@ -1,4 +1,6 @@
-function angle = read_encoder_rad()
-    load('constants')
-    angle = ENCODER_TO_RADIANS*hil_read_encoder(TERMINAL, ENCODER_CONNECTION);
+function angle = read_encoder_rad(encoder)
+    load('constants');
+    angle = ENCODERS{encoder}.ENCODER_TO_RADIANS*hil_read_encoder( ...
+        TERMINAL.TERMINAL_HANDLE, ENCODERS{encoder}.CONNECTION ...
+    );
 end

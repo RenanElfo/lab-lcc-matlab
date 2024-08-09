@@ -1,30 +1,35 @@
 clc, clear, close all;
-load_constants_and_connect;
+load_setup;
 
-sampling_period = 0.01;
-time_stop = 5;
-time = 0:sampling_period:time_stop;
 sine_frequency = 0.4;
-control = -5*sin(2*pi*sine_frequency*time);
-%control = zeros(1, size(time, 2));
+%control = -5*sin(2*pi*sine_frequency*SIMULATION.TIME);
+control = -5 + zeros(1, size(SIMULATION.TIME, 2));
 
-output = zeros(1, size(time, 2));
-for k = 0:time_stop/sampling_period
-    hil_write_analog(TERMINAL, CONTROL_CONNECTION, control(k+1));
-    output(k+1) = read_encoder_deg();
-    tic; while(toc < sampling_period); end
+encoder = zeros(1, size(time, 2));
+potentiometer = zeros(1, size(time, 2));
+tachometer = zeros(1, size(time, 2));
+for k = 0:SIMULATION.DURATION/SIMULATION.SAMPLING_PERIOD
+    hil_write_analog(TERMINAL.TERMINAL_HANDLE, CONTROL_CONNECTIONS{1}, control(k+1));
+    encoder(k+1) = read_encoder_rad(1);
+    potentiometer(k+1) = hil_read_analog(TERMINAL.TERMINAL_HANDLE, 0);
+    tachometer(k+1) = hil_read_analog(TERMINAL.TERMINAL_HANDLE, 2);
+    tic; while(toc < SIMULATION.SAMPLING_PERIOD); end
 end
 
 terminate;
 
 figure();
-plot(time, control, 'blue');
+plot(SIMULATION.TIME, control, 'blue');
 grid;
 xlabel('Tempo (s)');
 ylabel('sin(t)');
 
 figure();
-plot(time, output, 'red');
+plot(SIMULATION.TIME, -tachometer, 'red');
 grid;
 xlabel('Tempo (s)');
 ylabel('Encoder Output');
+
+figure();
+G = ROTARY_SERVO.ANGLE_OVER_VOLTAGE;
+step(series(G, tf([1, 0], 1)), SIMULATION.DURATION);
