@@ -8,3 +8,5 @@ for i = 1:size(ENCODERS)
         ENCODERS{i}.ENCODER_INITIAL_VALUE ...
     );
 end
+
+clear i;
