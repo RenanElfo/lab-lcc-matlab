@@ -18,6 +18,7 @@ ROTARY_SERVO.EQUIVALENT_VISCOUS_DAMPING_COEFFICIENT_HIGH = 4.0e-3;
 ROTARY_SERVO.SERVO_HIGH_GEAR_RATIO = 70;
 
 % Low gear configuration
+% Not implemented
 
 % Transfer functions
 ROTARY_SERVO.ANGLE_OVER_VOLTAGE_NOMINAL = rotary_servo_angle_tf( ...
@@ -27,6 +28,8 @@ ROTARY_SERVO.ANGLE_OVER_VOLTAGE_NOMINAL = rotary_servo_angle_tf( ...
     ROTARY_SERVO.EQUIVALENT_VISCOUS_DAMPING_COEFFICIENT_HIGH, ROTARY_SERVO.BACK_EMF_CONSTANT ...
 );
 
+% Obtained by dividing ROTARY_SERVO.ANGULAR_VELOCITY_OVER_VOLTAGE_EMPIRICAL
+% by s (equivalent to integrating in the time domain).
 ROTARY_SERVO.ANGLE_OVER_VOLTAGE_EMPIRICAL = zpk([], [-48.8294, 0], 69.3417);
 
 ROTARY_SERVO.ANGULAR_VELOCITY_OVER_VOLTAGE_NOMINAL = rotary_servo_angular_velocity_tf( ...
@@ -36,4 +39,9 @@ ROTARY_SERVO.ANGULAR_VELOCITY_OVER_VOLTAGE_NOMINAL = rotary_servo_angular_veloci
     ROTARY_SERVO.EQUIVALENT_VISCOUS_DAMPING_COEFFICIENT_HIGH, ROTARY_SERVO.BACK_EMF_CONSTANT ...
 );
 
+% Obtained by running the script motor_transfer_function.m for a simulation
+% duration of 0.2s, sampling time of 0.002s, 100 interations per voltage
+% for equally spaced (spaces of 0.5V) voltages between -5V and +5V, no
+% load, high gear ratio and no gear on the potentiometer. An approximation
+% for this transfer function is used in other scripts: G(s) = 70/(s+50).
 ROTARY_SERVO.ANGULAR_VELOCITY_OVER_VOLTAGE_EMPIRICAL = zpk([], -48.8294, 69.3417);
