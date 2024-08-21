@@ -6,7 +6,7 @@ function [voltage, deflection_mm] = read_extensometer(extensometer)
     else
         message_part_1 = 'Warning: VOLTS_TO_MILLIMETER_NOMINAL field in EXTENSOMETER';
         message_part_2 = ['{', num2str(extensometer), '}'];
-        message_part_3 = ' not assigned';
+        message_part_3 = ' not assigned.';
         message = strcat(message_part_1, message_part_2, message_part_3);
         disp(message);
         deflection_mm = NaN;
