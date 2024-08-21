@@ -1,3 +1,7 @@
+% Paths
+addpath('rotary_servo/model');
+addpath('rotary_servo/calibration');
+
 % Nominal values in SI units
 global ROTARY_SERVO
 
