@@ -22,7 +22,7 @@ step(closed_loop); hold on;
 step(closed_loop_control_over_reference); hold off;
 %}
 
-reference = 1.86*pi;
+reference = pi/2;
 u_k = 0;
 u_k_minus_1 = 0;
 error_k = 0;

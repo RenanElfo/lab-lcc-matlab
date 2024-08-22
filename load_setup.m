@@ -1,7 +1,9 @@
 % Function folder paths
 addpath('read_write');
 addpath('rotary_servo');
-addpath('maybe_useful');
+
+% Terminal constants
+terminal;
 
 % Encoder constants
 encoders;
@@ -11,12 +13,6 @@ analog_inputs;
 
 % Control constants
 controls;
-
-% Terminal constants
-terminal;
-
-% Making connections
-connect;
 
 % Simulation Constants
 simulation;

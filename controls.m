@@ -1,3 +1,6 @@
+% This script includes informations regarding the control signals of the
+% control system. Add new controls as required.
+
 global CONTROL_CONNECTIONS
 
 CONTROL_01.CONNECTION = 0;
