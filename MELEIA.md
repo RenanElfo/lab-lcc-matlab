@@ -6,7 +6,7 @@
 
 ## Utilização Básica:
 
-&nbsp;&nbsp;&nbsp;&nbsp;For basic use of this code, it is necessary to pay attention to the use of three scripts: ``simulation.m``, ``load_setup.m``, and ``terminate.m``. Additionally, the functions contained in the ``read_write`` folder can be very useful for any projects that use this code. See below for a simple usage example of this code:
+&nbsp;&nbsp;&nbsp;&nbsp;Para uma utilização básica deste código, é necessário se atentar ao uso de três _scripts_: ``simulation.m``, ``load_setup.m`` e ``terminate.m``. Além disso, as funções contidas na pasta ``read_write`` podem ser muito úteis para quaisquer projetos que se utilizem deste código. Veja abaixo uma utilização simples deste código:
 
 ``` MATLAB
 clc; clear; close all;
