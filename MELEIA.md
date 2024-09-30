@@ -2,11 +2,11 @@
 
 ### Introdução:
 
-&nbsp;&nbsp;&nbsp;&nbsp;Este código foi escrito para facilitar a utilização das plantas de controle no Laboratório de Controle por Computador sem que seja necessário utilizar o _Simulink_. Ele consiste de vários _scripts_ que, juntos, permitem conectar, medir e enviar sinais para as plantas utilizando os terminais da Quanser — por padrão, ele se conecta em um terminal 'q8_usb', mas também é possível especificar um terminal 'q2_usb' — de forma simplificada e abstraída.
+&nbsp;&nbsp;&nbsp;&nbsp;Este código foi escrito para facilitar a utilização das plantas de controle no Laboratório de Controle por Computador (Instituto Tecnológico de Aeronáutica) sem que seja necessário utilizar o _Simulink_. Ele consiste de vários _scripts_ e funções que, juntos, permitem conectar, medir e enviar sinais para as plantas utilizando os terminais da Quanser — por padrão, ele se conecta em um terminal 'q8_usb', mas também é possível especificar um terminal 'q2_usb' — de forma simplificada e abstraída.
 
 ## Utilização Básica:
 
-&nbsp;&nbsp;&nbsp;&nbsp;Para uma utilização básica deste código, é necessário se atentar ao uso de três _scripts_: ``simulation.m``, ``load_setup.m`` e ``terminate.m``. Além disso, as funções contidas na pasta ``read_write`` podem ser muito úteis para quaisquer projetos que se utilizem deste código. Veja abaixo uma utilização simples deste código:
+&nbsp;&nbsp;&nbsp;&nbsp;For basic use of this code, it is necessary to pay attention to the use of three scripts: ``simulation.m``, ``load_setup.m``, and ``terminate.m``. Additionally, the functions contained in the ``read_write`` folder can be very useful for any projects that use this code. See below for a simple usage example of this code:
 
 ``` MATLAB
 clc; clear; close all;
