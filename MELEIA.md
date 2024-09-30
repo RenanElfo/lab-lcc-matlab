@@ -38,6 +38,6 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;A partir do modelo da planta obtido empiricamente, foi utilizado o sisotool para se obterem os controladores PI e PD desejados. É possível rodar os _scripts_ ``angular_velocity_controller`` e ``angle_controller.m`` a fim de verificar a restauração da velocidade angular e do ângulo mediante perturbações com a mão.
 > [!CAUTION]
-> Tome cuidado ao colocar a mão em um motor em funcionamento, especialmente ao executar o _script_ ``angular_velocity_controller``, pois, caso a mão ou o cabelo ficar preso nas engrenagens, o motor irá compensar o esforço adicional girando com mais força.
+> Tome cuidado ao colocar a mão em um motor em funcionamento, especialmente ao executar o _script_ ``angular_velocity_controller``, pois, caso a mão, a roupa ou o cabelo ficarem presos nas engrenagens, o motor irá compensar o esforço adicional girando com mais força.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Por fim, dentro da pasta ``rotary_servo``, também tem-se um _scripts_ para a calibração do tacômetro, que obtém a sensitividade por meio de ajuste de curva de valores obtidos empiricamente, a partir do valor nominal fornecido pelo manual de utilização do servo rotacional fornecido pela Quanser; e um _script_ para a calibração do extensômetro da régua flexível que é acoplável ao servo rotacional.
