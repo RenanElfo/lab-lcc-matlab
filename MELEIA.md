@@ -9,7 +9,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;Para uma utilização básica deste código, é necessário se atentar ao uso de três _scripts_: ``simulation.m``, ``load_setup.m`` e ``terminate.m``. Além disso, as funções contidas na pasta ``read_write`` podem ser muito úteis para quaisquer projetos que se utilizem deste código. Veja abaixo uma utilização simples deste código:
 
-``
+`
 clc; clear; close all;
 load_setup;
 
@@ -37,7 +37,7 @@ xlabel('Time (s)');
 ylabel('Amplitude');
 legend('Control (V)', 'Encoder (rad)', 'Tachometer (rad/s)');
 hold off;
-``
+`
 
 ### Utilização Aprofundada:
 #### Scripts Gerais:
