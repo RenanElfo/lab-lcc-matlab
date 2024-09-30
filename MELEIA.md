@@ -4,8 +4,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;Este código foi escrito para facilitar a utilização das plantas de controle no Laboratório de Controle por Computador sem que seja necessário utilizar o _Simulink_. Ele consiste de vários _scripts_ que, juntos, permitem conectar, medir e enviar sinais para as plantas utilizando os terminais da Quanser — por padrão, ele se conecta em um terminal 'q8_usb', mas também é possível especificar um terminal 'q2_usb' — de forma simplificada e abstraída.
 
-## Utilização:
-### Utilização Básica:
+## Utilização Básica:
 
 &nbsp;&nbsp;&nbsp;&nbsp;Para uma utilização básica deste código, é necessário se atentar ao uso de três _scripts_: ``simulation.m``, ``load_setup.m`` e ``terminate.m``. Além disso, as funções contidas na pasta ``read_write`` podem ser muito úteis para quaisquer projetos que se utilizem deste código. Veja abaixo uma utilização simples deste código:
 
@@ -48,8 +47,8 @@ hold off;
 > [!NOTE]
 > O parâmetro 1 que é passado para as funções ``send_control``, ``read_encoder_rad`` e ``read_tachometer_rad_per_sec`` significa que estamos pegando o primeiro sinal de controle, o primeiro encoder e o primeiro tacômetro do sistema, respectivamente. ***Ele não diz respeito à porta de conecção. Para mais informações, vide a secção [Funções de Leitura e Escrita](https://github.com/RenanElfo/lab-lcc-matlab/blob/main/MELEIA.md#funções-de-leitura-e-escrita).***
 
-### Utilização Aprofundada:
-#### Scripts Gerais:
+## Utilização Aprofundada:
+### Scripts Gerais:
 
 &nbsp;&nbsp;&nbsp;&nbsp;Existem, neste código, sete _scripts_ que podem ser considerados os "principais". Eles são:
 * ``analog_input.m``: contém as informações necessárias para a utilização dos _inputs_ analógicos do sistema. Esses inputs estão conectados na região do terminal onde está escrito "Analog Inputs". São exemplos de _inputs_ analógicos os potenciômetros, extensômetros e tacômetros. Cada tipo diferente de entrada analógica possui campos distintos com informações relevantes para o seu funcionamento, então cabe ao usuário conhecer ao menos os valores nominais. Recomenda-se que qualquer outro tipo de _input_ analógico seja colocado nesse arquivo seguindo o padrão estilístico do código.
@@ -80,7 +79,7 @@ hold off;
 > [!IMPORTANT]
 > É possível que, com a introdução de alguns sinais analógicos diferentes dos já apresentados, seja necessário escrever novas funções para a pasta ``read_write`` ou, simplesmente, utilizar a função ``hil_read_analog`` do Quarc diretamente.
 
-#### Servo Rotacional:
+### Servo Rotacional:
 
 &nbsp;&nbsp;&nbsp;&nbsp;Como forma de exemplificar o funcionamento deste código, foram realizados alguns projetos de controle PI — para controle de velocidade angular — e PD — para controle de ângulo — para o servo rotacional.
 
