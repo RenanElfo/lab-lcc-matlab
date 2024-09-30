@@ -40,7 +40,7 @@ hold off;
 ```
 
 > [!IMPORTANT]
-> Os _scripts_ ``load_setup.m`` e ``terminate.m`` devem ser rodados no início e no fim da simulação, respectivamente. Mais informações a respeito desses _scripts_ podem ser encontradas na secção Utilização Aprofundada
+> Os _scripts_ ``load_setup.m`` e ``terminate.m`` devem ser rodados no início e no fim da simulação, respectivamente. Mais informações a respeito desses _scripts_ podem ser encontradas na secção [Utilização Aprofundada](https://github.com/RenanElfo/lab-lcc-matlab/blob/main/MELEIA.md#scripts-gerais)
 
 > [!IMPORTANT]
 > O _script_ ``simulation.m`` contém as informações de tempo de amostragem e duração que foram utilizadas nessa simulação.
