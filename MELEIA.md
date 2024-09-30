@@ -23,7 +23,8 @@
 > [!WARNING]
 > É importante informar que, para a versão do Quarc 2.2, é gerado um erro ao tentar realizar a conecção com o terminal, algo que acontece quando se roda os _scripts_ ``terminal.m`` ou ``load_setup.m``, se ele já estiver conectado. É, pois, necessário, para essa versão, rodar o _script_ ``terminate.m`` ao fim de toda simulação, a fim de não gerar erro ao tentar realizar a simulação novamente. Caso não seja possível executar o ``terminate.m``, deve-se reiniciar o MATLAB.
 
-&nbsp;&nbsp;&nbsp;&nbsp;As informações nos arquivos estão padronizadas para o uso no servo motor rotacional — com exceção dos campos ``.CONNECTION`` — presentes nos _scripts_ ``analog_input.m``, ``controls.m`` e ``encoders.m`` — que depende da montagem e que pode ter sido alterada desde a escrita deste documento.
+> [!NOTE]
+> As informações nos arquivos estão padronizadas para o uso no servo motor rotacional — com exceção dos campos ``.CONNECTION`` — presentes nos _scripts_ ``analog_input.m``, ``controls.m`` e ``encoders.m`` — que depende da montagem e que pode ter sido alterada desde a escrita deste documento.
 
 #### Funções de Leitura e Escrita:
 
