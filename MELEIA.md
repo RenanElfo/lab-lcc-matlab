@@ -46,7 +46,7 @@ hold off;
 > O _script_ ``simulation.m`` contém as informações de tempo de amostragem e duração que foram utilizadas nessa simulação, acessáveis pela variável ``SIMULATION``. Seu uso é dispensável, mas encorajado.
 
 > [!NOTE]
-> O parâmetro 1 que é passado para as funções ``send_control``, ``read_encoder_rad`` e ``read_tachometer_rad_per_sec`` significa que estamos pegando o primeiro sinal de controle, o primeiro encoder e o primeiro tacômetro do sistema, respectivamente. ***Ele não diz respeito à porta de conecção. Para mais informações, vide a secção [Funções de Leitura e Escrita]()***
+> O parâmetro 1 que é passado para as funções ``send_control``, ``read_encoder_rad`` e ``read_tachometer_rad_per_sec`` significa que estamos pegando o primeiro sinal de controle, o primeiro encoder e o primeiro tacômetro do sistema, respectivamente. ***Ele não diz respeito à porta de conecção. Para mais informações, vide a secção [Funções de Leitura e Escrita](https://github.com/RenanElfo/lab-lcc-matlab/blob/main/MELEIA.md#funções-de-leitura-e-escrita).***
 
 ### Utilização Aprofundada:
 #### Scripts Gerais:
@@ -67,7 +67,18 @@ hold off;
 
 #### Funções de Leitura e Escrita:
 
-&nbsp;&nbsp;&nbsp;&nbsp;Na pasta ``read_write``, estão presentes 5 funções úteis para a 
+&nbsp;&nbsp;&nbsp;&nbsp;Na pasta ``read_write``, estão presentes 5 funções úteis para a leitura dos valores analógicos e digitais, assim como a "escrita", i.e., o envio, do sinal de controle para o sistema. Elas são:
+* ``send_control``: envia o sinal de controle para o sistema. Recebe dois parâmetros: ``control_signal``, o sinal de controle a ser para o sistema, em volts; e ``control``, o ``control``-ésimo controle do sistema, que pode ser configurado no _script_ ``controls.m``.
+* ``read_tachometer_rad_per_sec``: leitura do sinal do tacômetro, em radianos por segundo. Recebe o parâmetro ``tachometer``, que diz respeito ao ``tachometer``-ésimo tacômetro do sistema a ser lido.
+* ``read_extensometer``: leitura do sinal do extensômetro, tanto em volts quando em milímetros. Recebe o parâmetro ``extensometer``, que diz respeito ao ``extensometer``-ésimo extensômetro do sistma a ser lido.
+* ``read_encoder_rad``: leitura do sinal do encoder, em radianos. Recebe o parâmetro ``encoder``, que diz respeito ao ``encoder``-ésimo encoder do sistema a ser lido.
+* ``read_encoder_deg``: leitura do sinal do encoder, em graus. Recebe o parâmetro ``encoder``, que diz respeito ao ``encoder``-ésimo encoder do sistema a ser lido.
+
+> [!IMPORTANT]
+> Note que os parâmetros ``control``, ``tachometer``, ``extensometer`` e ``encoder`` recebidos pelas funções ***não se referem à conecção desses sinais nos terminais, mas ao seu índice nas células ``CONTROLS``, ``TACHOMETERS``, ``EXTENSOMETERS`` e ``ENCODERS``, respectivamente***. Isso se deve ao fato de algumas plantas de controle no laboratório possuírem múltiplos sinais de encoder, ou controle, etc.
+
+> [!IMPORTANT]
+> É possível que, com a introdução de alguns sinais analógicos diferentes dos já apresentados, seja necessário escrever novas funções para a pasta ``read_write`` ou, simplesmente, utilizar a função ``hil_read_analog`` do Quarc diretamente.
 
 #### Servo Rotacional:
 
