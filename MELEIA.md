@@ -39,6 +39,12 @@ legend('Control (V)', 'Encoder (rad)', 'Tachometer (rad/s)');
 hold off;
 ```
 
+> [!IMPORTANT]
+> Os _scripts_ ``load_setup.m`` e ``terminate.m`` devem ser rodados no início e no fim da simulação, respectivamente. Mais informações a respeito desses _scripts_ podem ser encontradas na secção Utilização Aprofundada
+
+> [!IMPORTANT]
+> O _script_ ``simulation.m`` contém as informações de tempo de amostragem e duração que foram utilizadas nessa simulação.
+
 ### Utilização Aprofundada:
 #### Scripts Gerais:
 
