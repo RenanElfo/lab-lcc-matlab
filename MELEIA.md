@@ -7,7 +7,37 @@
 ## Utilização:
 ### Utilização Básica:
 
-&nbsp;&nbsp;&nbsp;&nbsp;Para uma utilização básica deste código, é necessário se atentar ao uso de três _scripts_: ``simulation.m``, ``load_setup.m`` e ````
+&nbsp;&nbsp;&nbsp;&nbsp;Para uma utilização básica deste código, é necessário se atentar ao uso de três _scripts_: ``simulation.m``, ``load_setup.m`` e ``terminate.m``. Além disso, as funções contidas na pasta ``read_write`` podem ser muito úteis para quaisquer projetos que se utilizem deste código. Veja abaixo uma utilização simples deste código:
+
+``
+clc; clear; close all;
+load_setup;
+
+amplitude = 3;
+frequency = 5;
+
+control = amplitude*sin(2*pi*frequency*SIMULATION.TIME);
+encoder = zeros(1, size(SIMULATION.TIME, 2));
+tachometer = zeros(1, size(SIMULATION.TIME, 2));
+for k = 0:SIMULATION.DURATION/SIMULATION.SAMPLING_PERIOD
+    tic;
+    send_control(control(k+1), 1);
+    encoder(k+1) = read_encoder_rad(1);
+    tachometer(k+1) = read_tachometer_rad_per_sec(1);
+    while(toc < SIMULATION.SAMPLING_PERIOD); end
+end
+
+terminate;
+
+figure(); hold on;
+plot(SIMULATION.TIME, control, 'red');
+plot(SIMULATION.TIME, encoder, 'green');
+plot(SIMULATION.TIME, tachometer, 'blue');
+xlabel('Time (s)');
+ylabel('Amplitude');
+legend('Control (V)', 'Encoder (rad)', 'Tachometer (rad/s)');
+hold off;
+``
 
 ### Utilização Aprofundada:
 #### Scripts Gerais:
