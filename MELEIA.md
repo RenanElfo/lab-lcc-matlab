@@ -67,7 +67,7 @@ hold off;
 #### Funções de Leitura e Escrita:
 
 &nbsp;&nbsp;&nbsp;&nbsp;Na pasta ``read_write``, estão presentes 5 funções úteis para a leitura dos valores analógicos e digitais, assim como a "escrita", i.e., o envio, do sinal de controle para o sistema. Elas são:
-* ``send_control``: envia o sinal de controle para o sistema. Recebe dois parâmetros: ``control_signal``, o sinal de controle a ser para o sistema, em volts; e ``control``, o ``control``-ésimo controle do sistema, que pode ser configurado no _script_ ``controls.m``.
+* ``send_control``: envia o sinal de controle para o sistema. Recebe dois parâmetros: ``control_signal``, o valor do controle a ser enviado para o sistema, em volts; e ``control``, o ``control``-ésimo controle do sistema, que pode ser configurado no _script_ ``controls.m``.
 * ``read_tachometer_rad_per_sec``: leitura do sinal do tacômetro, em radianos por segundo. Recebe o parâmetro ``tachometer``, que diz respeito ao ``tachometer``-ésimo tacômetro do sistema a ser lido.
 * ``read_extensometer``: leitura do sinal do extensômetro, tanto em volts quando em milímetros. Recebe o parâmetro ``extensometer``, que diz respeito ao ``extensometer``-ésimo extensômetro do sistma a ser lido.
 * ``read_encoder_rad``: leitura do sinal do encoder, em radianos. Recebe o parâmetro ``encoder``, que diz respeito ao ``encoder``-ésimo encoder do sistema a ser lido.
