@@ -10,6 +10,7 @@
 
 
 ### Utilização Aprofundada:
+#### Scripts Gerais:
 
 &nbsp;&nbsp;&nbsp;&nbsp;Existem, neste código, sete _scripts_ que podem ser considerados os "principais". Eles são:
 * ``analog_input.m``: contém as informações necessárias para a utilização dos _inputs_ analógicos do sistema. Esses inputs estão conectados na região do terminal onde está escrito "Analog Inputs". São exemplos de _inputs_ analógicos os potenciômetros, extensômetros e tacômetros. Cada tipo diferente de entrada analógica possui campos distintos com informações relevantes para o seu funcionamento, então cabe ao usuário conhecer ao menos os valores nominais. Recomenda-se que quaisquer outro tipo de _input_ analógico seja colocado nesse arquivo seguindo o padrão estilístico do código.
@@ -21,3 +22,13 @@
 * ``terminate.m``: zera o sinal de controle enviado pelas portas de "Analog Outputs" do terminal e, em seguida, encerra a conecção do terminal com o computador. É recomendado rodar esse _script_ logo após encerrar a simulação, seja em um _script_ ou na Janela de Comandos. É importante informar que, para a versão do Quarc 2.2, é gerado um erro ao tentar realizar a conecção com o terminal, algo que acontece quando se roda os _scripts_ ``terminal.m`` ou ``load_setup.m``, se ele já estiver conectado. É, pois, necessário, para essa versão, rodar o _script_ ``terminate.m`` ao fim de toda simulação, a fim de não gerar erro ao tentar realizar a simulação novamente. Caso não seja possível executar o ``terminate.m``, deve-se reiniciar o MATLAB.
 
 &nbsp;&nbsp;&nbsp;&nbsp;As informações nos arquivos estão padronizadas para o uso no servo motor rotacional — com exceção do campo ``.CONNECTION`` que depende da montagem e que pode ter sido alterada desde a escrita deste documento.
+
+#### Servo Rotacional:
+
+&nbsp;&nbsp;&nbsp;&nbsp;Como forma de exemplificar o funcionamento deste código, foram realizados alguns projetos de controle PI — para controle de velocidade angular — e PD — para controle de ângulo — para o servo rotacional.
+
+&nbsp;&nbsp;&nbsp;&nbsp;Para isso, foi levantado o modelo da planta: tomando como base os valores nominais e as funções de transferência fornecidos pelo manual de uso do servo rotacional, disponibilizado pela Quanser, foi realizada uma simulação, por meio do _script_ ``motor_transfer_function.m``, de cem iterações por voltagem, para vinte valores diferentes de voltagem — indo de -5V a +5V e ignorando o valor de 0V —, cada iteração tendo duração de 200ms e tempo de amostragem de 5ms, a fim de coletar a resposta ao degrau do motor de forma empírica. Com os valores numéricos obtidos, foi feito um ajuste de curva para cada voltagem e, com isso, foi obtido o ganho DC para cada valor de tensão e foi considerado como ganho DC do motor a média entre os valores obtidos. Para encontrar o polo do motor, foram normalizadas todas as respostas ao degrau obtidas e foi feito um ajuste de curva. O modelo obtido foi armazenado no campo ``.ANGULAR_VELOCITY_OVER_VOLTAGE_EMPIRICAL`` da variável global ``ROTARY_SERVO`` e pode ser encontrada no final do _script_ ``rotary_servo.m``.
+
+&nbsp;&nbsp;&nbsp;&nbsp;A partir do modelo da planta obtido empiricamente, foi utilizado o sisotool para se obterem os controladores PI e PD desejados. É possível rodar os _scripts_ ``angular_velocity_controller`` e ``angle_controller.m`` a fim de verificar a restauração da velocidade angular e do ângulo mediante perturbações com a mão — tome cuidado ao colocar a mão em um motor em funcionamento, especialmente ao executar o _script_ ``angular_velocity_controller``, pois, caso a mão ou o cabelo ficar preso nas engrenagens, o motor irá compensar o esforço adicional girando com mais força.
+
+&nbsp;&nbsp;&nbsp;&nbsp;Por fim, dentro da pasta ``rotary_servo``, também tem-se um _scripts_ para a calibração do tacômetro, que obtém a sensitividade por meio de ajuste de curva de valores obtidos empiricamente, a partir do valor nominal fornecido pelo manual de utilização do servo rotacional fornecido pela Quanser; e um _script_ para a calibração do extensômetro da régua flexível que é acoplável ao servo rotacional.
