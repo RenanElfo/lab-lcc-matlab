@@ -48,7 +48,7 @@ hold off;
 > The script ``simulation.m`` contains the sampling time and duration information used in this simulation, accessible through the variable ``SIMULATION``. Its use is optional but encouraged.
 
 > [!IMPORTANT]
-> The parameter 1 passed to the functions send_control, read_encoder_rad, and read_tachometer_rad_per_sec means that we are using the first control signal, the first encoder, and the first tachometer of the system, respectively. ***It does not refer to the connection port. For more information, see the sections [General Scripts](https://github.com/RenanElfo/lab-lcc-matlab/blob/main/README.md#general-scripts) and [Read and Write Functions](https://github.com/RenanElfo/lab-lcc-matlab/blob/main/README.md#read-and-write-functions).***
+> The parameter 1 passed to the functions ``send_control``, ``read_encoder_rad``, and ``read_tachometer_rad_per_sec`` means that we are using the first control signal, the first encoder, and the first tachometer of the system, respectively. ***It does not refer to the connection port. For more information, see the sections [General Scripts](https://github.com/RenanElfo/lab-lcc-matlab/blob/main/README.md#general-scripts) and [Read and Write Functions](https://github.com/RenanElfo/lab-lcc-matlab/blob/main/README.md#read-and-write-functions).***
 
 ## In Depth Usage:
 ### General Scripts:
