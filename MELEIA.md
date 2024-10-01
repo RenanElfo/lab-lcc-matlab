@@ -41,10 +41,10 @@ hold off;
 > [!IMPORTANT]
 > Os _scripts_ ``load_setup.m`` e ``terminate.m`` devem ser rodados no início e no fim da simulação, respectivamente. Mais informações a respeito desses _scripts_ podem ser encontradas na secção [Utilização Aprofundada](https://github.com/RenanElfo/lab-lcc-matlab/blob/main/MELEIA.md#scripts-gerais).
 
-> [!IMPORTANT]
+> [!NOTE]
 > O _script_ ``simulation.m`` contém as informações de tempo de amostragem e duração que foram utilizadas nessa simulação, acessáveis pela variável ``SIMULATION``. Seu uso é dispensável, mas encorajado.
 
-> [!NOTE]
+> [!IMPORTANT]
 > O parâmetro 1 que é passado para as funções ``send_control``, ``read_encoder_rad`` e ``read_tachometer_rad_per_sec`` significa que estamos pegando o primeiro sinal de controle, o primeiro encoder e o primeiro tacômetro do sistema, respectivamente. ***Ele não diz respeito à porta de conecção. Para mais informações, vide as secções [Scripts Gerais](https://github.com/RenanElfo/lab-lcc-matlab/blob/main/MELEIA.md#scripts-gerais) e [Funções de Leitura e Escrita](https://github.com/RenanElfo/lab-lcc-matlab/blob/main/MELEIA.md#funções-de-leitura-e-escrita).***
 
 ## Utilização Aprofundada:
