@@ -84,7 +84,7 @@ hold off;
 
 ### Rotary Servo:
 
-&nbsp;&nbsp;&nbsp;&nbsp;As a way to exemplify the functioning of this code, some PI control projects — for angular velocity control — and PD control projects — for angle control — were carried out for the rotary servo.
+&nbsp;&nbsp;&nbsp;&nbsp;As a way to exemplify the functioning of this code, a PI control project — for angular velocity control — and a PD control project — for angle control — were carried out for the rotary servo.
 
 &nbsp;&nbsp;&nbsp;&nbsp;To do this, the system model was raised: based on the nominal values and transfer functions provided in the user manual for the rotary servo, made available by Quanser, a simulation was conducted using the script ``motor_transfer_function.m`` to empirically collect the step response of the motor. With the numerical values obtained, a curve fitting was performed for each voltage, and the DC gain for each voltage value was calculated, with the average of these values being considered the DC gain of the motor. To find the motor's pole, all the step responses obtained were normalized, and a curve fitting was performed.
 > [!NOTE]
