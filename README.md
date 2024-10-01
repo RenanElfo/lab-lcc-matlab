@@ -1,7 +1,7 @@
 # User Manual and Configuration of this Code
 
 > [!NOTE]
-> [Portuguese Documentation Note]: Para a documentação em português, vide [MELEIA.md](https://github.com/RenanElfo/lab-lcc-matlab/blob/main/MELEIA.md).
+> Para a documentação em português, vide [MELEIA.md](https://github.com/RenanElfo/lab-lcc-matlab/blob/main/MELEIA.md).
 
 ### Introduction:
 
