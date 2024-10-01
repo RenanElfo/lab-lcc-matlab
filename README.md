@@ -67,7 +67,7 @@ hold off;
 > [!NOTE]
 > The information in the files is standardized for use with the rotary servo motor, except for the ``.CONNECTION`` fields — present in the scripts ``analog_input.m``, ``controls.m``, and ``encoders.m`` — which depend on the setup and may have been changed since this document was written.
 
-#### Read and Write Functions:
+### Read and Write Functions:
 
 &nbsp;&nbsp;&nbsp;&nbsp;In the ``read_write`` folder, there are 5 useful functions for reading analog and digital values, as well as for "writing", i.e., sending the control signal to the system. They are:
 * ``send_control``: sends the control signal to the system. It receives two parameters: ``control_signal``, the value of the control to be sent to the system in volts; and ``control``, the ``control``-th control of the system, which can be configured in the script ``controls.m``.
@@ -82,7 +82,7 @@ hold off;
 > [!IMPORTANT]
 > It is possible that, with the introduction of some analog signals different from those already presented, it may be necessary to write new functions for the ``read_write`` folder or simply use the ``hil_read_analog`` function from Quarc directly.
 
-### Rotary Servo:
+## Rotary Servo:
 
 &nbsp;&nbsp;&nbsp;&nbsp;As a way to exemplify the functioning of this code, a PI control project — for angular velocity control — and a PD control project — for angle control — were carried out for the rotary servo.
 
