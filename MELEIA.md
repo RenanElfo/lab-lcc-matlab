@@ -64,7 +64,7 @@ hold off;
 > [!NOTE]
 > As informações nos arquivos estão padronizadas para o uso no servo motor rotacional, com exceção dos campos ``.CONNECTION`` — presentes nos _scripts_ ``analog_input.m``, ``controls.m`` e ``encoders.m`` — que dependem da montagem e que podem ter sido alterados desde a escrita deste documento.
 
-#### Funções de Leitura e Escrita:
+### Funções de Leitura e Escrita:
 
 &nbsp;&nbsp;&nbsp;&nbsp;Na pasta ``read_write``, estão presentes 5 funções úteis para a leitura dos valores analógicos e digitais, assim como a "escrita", i.e., o envio, do sinal de controle para o sistema. Elas são:
 * ``send_control``: envia o sinal de controle para o sistema. Recebe dois parâmetros: ``control_signal``, o valor do controle a ser enviado para o sistema, em volts; e ``control``, o ``control``-ésimo controle do sistema, que pode ser configurado no _script_ ``controls.m``.
@@ -79,7 +79,7 @@ hold off;
 > [!IMPORTANT]
 > É possível que, com a introdução de alguns sinais analógicos diferentes dos já apresentados, seja necessário escrever novas funções para a pasta ``read_write`` ou, simplesmente, utilizar a função ``hil_read_analog`` do Quarc diretamente.
 
-### Servo Rotacional:
+## Servo Rotacional:
 
 &nbsp;&nbsp;&nbsp;&nbsp;Como forma de exemplificar o funcionamento deste código, foram realizados alguns projetos de controle PI — para controle de velocidade angular — e PD — para controle de ângulo — para o servo rotacional.
 
